@@ -8,7 +8,7 @@ class CreateTopicsTable extends Migration
 	public function up()
 	{
 		Schema::create('topics', function(Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('title')->index();
             $table->text('body');
             $table->bigInteger('user_id')->unsigned()->index();
