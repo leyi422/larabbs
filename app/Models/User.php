@@ -6,8 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail as MustVerifyEmailContact;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Auth\MustVerifyEmail as MustVerifyEmailTrait;
-
 use Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable implements MustVerifyEmailContact
 {
@@ -16,6 +16,8 @@ class User extends Authenticatable implements MustVerifyEmailContact
     use Notifiable {
         notify as protected laravelNotify;
     }
+
+    use HasRoles;
 
     public function notify($instance)
     {
