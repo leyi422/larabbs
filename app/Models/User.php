@@ -21,6 +21,8 @@ class User extends Authenticatable implements MustVerifyEmailContact
 
     use Traits\ActiveUserHelper;
 
+    use Traits\LastActivedAtHelper;
+
     public function notify($instance)
     {
         if ($this->id == Auth::id()) {
